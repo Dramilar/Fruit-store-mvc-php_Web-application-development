@@ -1,0 +1,38 @@
+.admin-container {
+    padding: 30px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.status-0 {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+/* Chờ xác nhận */
+.status-1 {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Đã thanh toán */
+.status-2 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Đang giao */
+.status-3 {
+    color: #6c757d;
+    font-weight: bold;
+}
+
+/* Đã hủy */
+.status-4 {
+    color: #343a40;
+    font-weight: bold;
+}
+
+/* Hoàn thành */

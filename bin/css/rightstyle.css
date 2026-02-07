@@ -1,0 +1,66 @@
+/* CSS cho filter products */
+.filter-content {
+    padding: 20px;
+}
+
+.filter-product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.filter-product-item {
+    width: calc(25% - 15px);
+    min-width: 200px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.filter-product-item:hover {
+    transform: translateY(-5px);
+}
+
+.filter-product-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.filter-product-name {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    height: 40px;
+    overflow: hidden;
+}
+
+.filter-product-price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.filter-btn-detail {
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: block;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.filter-btn-detail:hover {
+    background: #e67e22;
+}
