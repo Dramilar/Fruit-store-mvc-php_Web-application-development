@@ -1,0 +1,50 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung xổ xuống */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* Bắt buộc để không đẩy các thẻ khác */
+    right: 0;
+    /* Căn lề phải sát với nút Account */
+    top: 100%;
+    /* Xuất hiện ngay bên dưới nút */
+    background-color: #ffffff;
+    min-width: 180px;
+    /* Độ rộng menu */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    /* Chỉ số cao nhất để đè lên slider/sản phẩm */
+    border-radius: 5px;
+    margin-top: 5px;
+    /* Khoảng cách nhỏ với nút bấm */
+    overflow: hidden;
+    /* Bo góc cho đẹp */
+}
+
+/* Các link bên trong */
+.dropdown-content a {
+    color: #333 !important;
+    /* Chữ màu tối trên nền trắng */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    /* Đường kẻ mờ phân cách */
+    background: none !important;
+    /* Xóa background xám của menu chính */
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f39c12 !important;
+    /* Màu cam khi di chuột */
+    color: white !important;
+}

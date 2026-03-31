@@ -1,0 +1,131 @@
+.history-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.history-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.history-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.history-order-id {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.history-date {
+    color: #777;
+    font-size: 13px;
+}
+
+.history-status {
+    background: #f39c12;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.history-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    margin-bottom: 12px;
+}
+
+.history-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.history-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid #f2f2f2;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.history-item img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #fafafa;
+}
+
+.history-item-info {
+    flex: 1;
+}
+
+.history-item-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.history-item-meta {
+    color: #777;
+    font-size: 13px;
+}
+
+.history-item-total {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.history-footer {
+    text-align: right;
+    font-size: 16px;
+}
+
+.history-empty {
+    padding: 12px 16px;
+    background: #fff3f3;
+    border: 1px solid #f5c2c7;
+    color: #842029;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .history-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .history-info {
+        grid-template-columns: 1fr;
+    }
+
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .history-item-total {
+        align-self: flex-end;
+    }
+}
