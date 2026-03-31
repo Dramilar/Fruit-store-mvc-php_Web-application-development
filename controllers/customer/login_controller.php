@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    $userModel = new User($conn);
+    $userModel = new clsUser($conn);
     $user = $userModel->login($username, $password);
 
     if ($user) {

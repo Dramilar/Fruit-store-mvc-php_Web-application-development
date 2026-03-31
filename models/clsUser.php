@@ -1,5 +1,5 @@
 <?php
-class User
+class clsUser
 {
     private $conn;
 
@@ -56,4 +56,16 @@ class User
         }
         return false;
     }
+    public function checkOldPassword($username, $password) {
+    $stmt = $this->conn->prepare("SELECT id FROM user WHERE username = ? AND password = ?");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    return $stmt->get_result()->num_rows > 0;
+}
+
+public function updatePassword($username, $newPassword) {
+    $stmt = $this->conn->prepare("UPDATE user SET password = ? WHERE username = ?");
+    $stmt->bind_param("ss", $newPassword, $username);
+    return $stmt->execute();
+}
 }

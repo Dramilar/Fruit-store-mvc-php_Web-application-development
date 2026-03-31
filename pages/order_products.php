@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once(__DIR__ . "/../controllers/customer/order_controller.php");
 include("../controllers/customer/auth_helper.php");
 checkLoginAccess(); // Kiểm tra quyền truy cập

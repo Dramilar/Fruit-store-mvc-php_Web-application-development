@@ -68,4 +68,45 @@ class Product
         $result = $this->conn->query($sql);
         return $result ? $result->fetch_assoc() : null;
     }
+    // Thêm sản phẩm
+public function insert($name, $price, $image, $id_type, $description)
+{
+    $name = $this->conn->real_escape_string($name);
+    $price = intval($price);
+    $image = $this->conn->real_escape_string($image);
+    $id_type = intval($id_type);
+    $description = $this->conn->real_escape_string($description);
+
+    $sql = "INSERT INTO product(name, price, image, id_type, description)
+            VALUES ('$name', $price, '$image', $id_type, '$description')";
+
+    return $this->conn->query($sql);
+}
+// Sửa sản phẩm
+public function update($id, $name, $price, $image, $id_type, $description)
+{
+    $id = intval($id);
+    $name = $this->conn->real_escape_string($name);
+    $price = intval($price);
+    $image = $this->conn->real_escape_string($image);
+    $id_type = intval($id_type);
+    $description = $this->conn->real_escape_string($description);
+
+    $sql = "UPDATE product SET 
+                name='$name',
+                price=$price,
+                image='$image',
+                id_type=$id_type,
+                description='$description'
+            WHERE id=$id";
+
+    return $this->conn->query($sql);
+}
+// Xóa sản phẩm
+public function delete($id)
+{
+    $id = intval($id);
+    $sql = "DELETE FROM product WHERE id=$id";
+    return $this->conn->query($sql);
+}
 }

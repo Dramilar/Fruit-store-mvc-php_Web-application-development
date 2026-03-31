@@ -119,7 +119,7 @@ $orderCounts = $orderModel->getCountByStatus(); // Hàm thống kê số lượn
                 <span>📊</span> Báo cáo & Thống kê
             </a>
 
-            <a href="post_product.php" class="menu-item">
+            <a href="manager_products.php" class="menu-item">
                 <span>🍎</span> Quản lý sản phẩm
             </a>
 
