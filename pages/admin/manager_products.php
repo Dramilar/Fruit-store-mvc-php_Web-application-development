@@ -2,12 +2,24 @@
 include("../../includes/connect.php");
 require_once("../../models/clsProduct.php");
 
+include("../../controllers/customer/auth_helper.php");
+checkLoginAccess(); // Kiểm tra quyền truy cập
+//session_start();
+
+
 $product = new Product($conn);
 $list = $product->getAllProducts();
 $total = mysqli_num_rows($list);
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../bin/css/bootstrap.css">
+<link rel="stylesheet" href="../../bin/css/style.css">
+<link rel="stylesheet" href="../../bin/css/banner.css">
+
+<?php include("../../includes/header.php"); ?>
+<?php include("../../includes/banner_admin.php"); ?>
 
 <div class="container py-5">
 
@@ -42,45 +54,49 @@ $total = mysqli_num_rows($list);
                 </thead>
 
                 <tbody id="productTable">
-                <?php while($row = mysqli_fetch_assoc($list)) { ?>
-                    <tr>
-                        <td>#<?= $row['id'] ?></td>
+                    <?php while ($row = mysqli_fetch_assoc($list)) { ?>
+                        <tr>
+                            <td>#<?= $row['id'] ?></td>
 
-                        <td class="text-start fw-semibold">
-                            <?= htmlspecialchars($row['name']) ?>
-                        </td>
+                            <td class="text-start fw-semibold">
+                                <?= htmlspecialchars($row['name']) ?>
+                            </td>
 
-                        <td>
-                            <span class="badge bg-danger fs-6">
-                                <?= number_format($row['price']) ?>₫
-                            </span>
-                        </td>
+                            <td>
+                                <span class="badge bg-danger fs-6">
+                                    <?= number_format($row['price']) ?>₫
+                                </span>
+                            </td>
 
-                        <td>
-                            <img src="/Fruit/bin/images/<?= htmlspecialchars($row['image']) ?>"
-                                 class="product-img">
-                        </td>
+                            <td>
+                                <img src="/Fruit/bin/images/<?= htmlspecialchars($row['image']) ?>"
+                                    class="product-img">
+                            </td>
 
-                        <td>
-                            <a href="edit_product.php?id=<?= $row['id'] ?>" 
-                               class="btn btn-warning btn-sm rounded-pill px-3">
-                               ✏️
-                            </a>
+                            <td>
+                                <a href="edit_product.php?id=<?= $row['id'] ?>"
+                                    class="btn btn-warning btn-sm rounded-pill px-3">
+                                    ✏️
+                                </a>
 
-                            <a href="../../controllers/staff/product_controller.php?delete=<?= $row['id'] ?>" 
-                               class="btn btn-danger btn-sm rounded-pill px-3"
-                               onclick="return confirm('Xóa sản phẩm này?')">
-                               🗑
-                            </a>
-                        </td>
-                    </tr>
-                <?php } ?>
+                                <a href="../../controllers/staff/product_controller.php?delete=<?= $row['id'] ?>"
+                                    class="btn btn-danger btn-sm rounded-pill px-3"
+                                    onclick="return confirm('Xóa sản phẩm này?')">
+                                    🗑
+                                </a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
 
             </table>
 
         </div>
     </div>
+</div>
+<?php include("../../includes/footer.php"); ?>
+<div style="color: red; font-style: italic; font-weight: bold;">
+    <h2><a href="dashboard.php">Quay lại trang chủ</a></h2>
 </div>
 
 <style>
@@ -111,7 +127,7 @@ $total = mysqli_num_rows($list);
 
 <script>
     // SEARCH realtime
-    document.getElementById("searchInput").addEventListener("keyup", function () {
+    document.getElementById("searchInput").addEventListener("keyup", function() {
         let filter = this.value.toLowerCase();
         let rows = document.querySelectorAll("#productTable tr");
 

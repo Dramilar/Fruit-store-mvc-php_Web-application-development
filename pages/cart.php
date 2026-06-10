@@ -1,7 +1,7 @@
 <?php
 include("../controllers/customer/auth_helper.php");
 checkLoginAccess(); // Kiểm tra quyền truy cập
-session_start();
+//session_start();
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -30,11 +30,11 @@ session_start();
                     $total += $subtotal;
                 ?>
                     <div class="cart-item" style="display: flex; align-items: center; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
-                        
+
                         <!-- ẢNH (FIX CHUẨN Ở ĐÂY) -->
-                        <img src="/Fruit/bin/images/<?php echo htmlspecialchars($item['image']); ?>" 
-                             alt="<?php echo htmlspecialchars($item['name']); ?>" 
-                             style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+                        <img src="/Fruit/bin/images/<?php echo htmlspecialchars($item['image']); ?>"
+                            alt="<?php echo htmlspecialchars($item['name']); ?>"
+                            style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
 
                         <div style="flex: 1;">
                             <h3><?php echo htmlspecialchars($item['name']); ?></h3>
@@ -65,7 +65,7 @@ session_start();
                 </div>
             </div>
         <?php else: ?>
-            <p>Giỏ hàng của bạn đang trống. 
+            <p>Giỏ hàng của bạn đang trống.
                 <a href="/Fruit/index.php">Tiếp tục mua sắm</a>
             </p>
         <?php endif; ?>

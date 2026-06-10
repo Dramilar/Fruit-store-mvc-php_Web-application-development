@@ -53,4 +53,3 @@ if ($result && $result->num_rows > 0) {
 }
 
 echo "</div>";
-?>

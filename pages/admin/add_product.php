@@ -1,6 +1,11 @@
-<?php include("../../includes/connect.php"); ?>
+<?php include("../../includes/connect.php");
+include("../../controllers/customer/auth_helper.php");
+checkLoginAccess(); // Kiểm tra quyền truy cập
+//session_start();
+?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/Fruit/bin/css/style.css">
 
 <div class="container py-5">
 
@@ -8,9 +13,9 @@
 
         <h3 class="mb-4">➕ Thêm sản phẩm</h3>
 
-        <form method="POST" 
-              action="../../controllers/staff/product_controller.php"
-              enctype="multipart/form-data">
+        <form method="POST"
+            action="../../controllers/staff/product_controller.php"
+            enctype="multipart/form-data">
 
             <!-- TÊN -->
             <label class="fw-semibold">Tên sản phẩm</label>
@@ -22,9 +27,9 @@
 
             <!-- ẢNH -->
             <label class="fw-semibold">Ảnh sản phẩm</label><br>
-            <img id="preview" 
-                 src="https://via.placeholder.com/100" 
-                 class="mb-3 product-img">
+            <img id="preview"
+                src="https://via.placeholder.com/100"
+                class="mb-3 product-img">
 
             <input type="file" name="image" class="form-control mb-3" required onchange="previewImage(event)">
 
@@ -44,7 +49,7 @@
             <!-- BUTTON -->
             <div class="d-flex gap-2">
                 <button name="add" class="btn btn-success px-4">Thêm</button>
-                <a href="products.php" class="btn btn-secondary px-4">Quay lại</a>
+                <a href="manager_products.php" class="btn btn-secondary px-4">Quay lại</a>
             </div>
 
         </form>
@@ -62,14 +67,14 @@
         height: 100px;
         object-fit: cover;
         border-radius: 12px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
 </style>
 
 <script>
     function previewImage(event) {
         const reader = new FileReader();
-        reader.onload = function(){
+        reader.onload = function() {
             document.getElementById('preview').src = reader.result;
         }
         reader.readAsDataURL(event.target.files[0]);

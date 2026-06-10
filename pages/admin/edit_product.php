@@ -2,6 +2,9 @@
 include($_SERVER['DOCUMENT_ROOT'] . "/Fruit/includes/connect.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/Fruit/models/clsProduct.php");
 
+include("../../controllers/customer/auth_helper.php");
+checkLoginAccess(); // Kiểm tra quyền truy cập
+
 $product = new Product($conn);
 
 $id = $_GET['id'];
@@ -16,9 +19,9 @@ $row = $product->getProductById($id);
 
         <h3 class="mb-4">✏️ Sửa sản phẩm</h3>
 
-        <form method="POST" 
-              action="../../controllers/staff/product_controller.php"
-              enctype="multipart/form-data">
+        <form method="POST"
+            action="../../controllers/staff/product_controller.php"
+            enctype="multipart/form-data">
 
             <input type="hidden" name="id" value="<?= $row['id'] ?>">
             <input type="hidden" name="old_image" value="<?= htmlspecialchars($row['image']) ?>">
@@ -26,18 +29,18 @@ $row = $product->getProductById($id);
             <!-- TÊN -->
             <label class="fw-semibold">Tên sản phẩm</label>
             <input type="text" name="name" class="form-control mb-3"
-                   value="<?= htmlspecialchars($row['name']) ?>" required>
+                value="<?= htmlspecialchars($row['name']) ?>" required>
 
             <!-- GIÁ -->
             <label class="fw-semibold">Giá</label>
             <input type="number" name="price" class="form-control mb-3"
-                   value="<?= $row['price'] ?>" required>
+                value="<?= $row['price'] ?>" required>
 
             <!-- ẢNH -->
             <label class="fw-semibold">Ảnh hiện tại</label><br>
             <img id="preview"
-                 src="/Fruit/bin/images/<?= htmlspecialchars($row['image']) ?>"
-                 class="mb-3 product-img">
+                src="/Fruit/bin/images/<?= htmlspecialchars($row['image']) ?>"
+                class="mb-3 product-img">
 
             <input type="file" name="image" class="form-control mb-3" onchange="previewImage(event)">
 
@@ -58,7 +61,7 @@ $row = $product->getProductById($id);
             <!-- BUTTON -->
             <div class="d-flex gap-2">
                 <button name="update" class="btn btn-warning px-4">Cập nhật</button>
-                <a href="products.php" class="btn btn-secondary px-4">Quay lại</a>
+                <a href="manager_products.php" class="btn btn-secondary px-4">Quay lại</a>
             </div>
 
         </form>
@@ -76,14 +79,14 @@ $row = $product->getProductById($id);
         height: 100px;
         object-fit: cover;
         border-radius: 12px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
 </style>
 
 <script>
     function previewImage(event) {
         const reader = new FileReader();
-        reader.onload = function(){
+        reader.onload = function() {
             document.getElementById('preview').src = reader.result;
         }
         reader.readAsDataURL(event.target.files[0]);

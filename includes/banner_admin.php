@@ -2,13 +2,10 @@
     <div id="menu-left">
         <ul>
             <li><a href="/Fruit/pages/admin/dashboard.php">🏠 Home</a></li>
+            <li><a href="/Fruit/pages/news.php">📰 News</a></li>
             <li>
-                <form id="search-form">
-                    <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm">
-                    <button type="submit">🔍</button>
-                </form>
+                <a href="/Fruit/pages/admin/manager_products.php">🍎 Products</a>
             </li>
-            <li><a href="/Fruit/news.php">📰 News</a></li>
             <li><a href="/Fruit/pages/admin/manager_order.php">Quản lý đơn hàng</a></li>
         </ul>
     </div>
@@ -16,7 +13,7 @@
         <div class="dropdown">
             <button class="dropbtn" type="button">👤 Account</button>
             <div class="dropdown-content">
-                <a href="/Fruit/pages/cart.php" id="cart-link">🛒 Shopping Cart (<span id="cart-count">0</span>)</a>
+                <a href="/Fruit/pages/news.php" id="cart-link">📰 News (<span id="cart-count">0</span>)</a>
                 <a href="/Fruit/pages/admin/manager_order.php"> Manage Orders</a>
                 <a href="/Fruit/pages/admin/statistic_order.php"> Statistics</a>
                 <a href="/Fruit/pages/change_password.php">🔒 Change Password</a>

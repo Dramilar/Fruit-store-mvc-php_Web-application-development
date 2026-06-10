@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    $userModel = new User($conn);
+    $userModel = new clsUser($conn);
 
     if ($userModel->checkExists($username)) {
         $_SESSION['error'] = "Tài khoản đã tồn tại!";
@@ -22,4 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     exit;
+}
+if ($_POST['password'] !== $_POST['confirm_password']) {
+    header("Location: ../../pages/register.php?error=Mật khẩu không khớp");
+    exit();
 }

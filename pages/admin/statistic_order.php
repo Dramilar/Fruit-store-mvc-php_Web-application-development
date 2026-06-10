@@ -16,6 +16,12 @@ $success = $orderCounts[3] ?? 0;
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="../../bin/css/bootstrap.css">
+<link rel="stylesheet" href="../../bin/css/style.css">
+<link rel="stylesheet" href="../../bin/css/banner.css">
+
+<?php include("../../includes/header.php"); ?>
+<?php include("../../includes/banner_admin.php"); ?>
 
 <div class="statistics-container">
     <h1>📊 Báo cáo bán hàng</h1>
@@ -46,6 +52,10 @@ $success = $orderCounts[3] ?? 0;
         <canvas id="orderChart"></canvas>
     </div>
 </div>
+<?php include("../../includes/footer.php"); ?>
+<div style="color: red; font-style: italic; font-weight: bold;">
+    <h2><a href="dashboard.php">Quay lại trang chủ</a></h2>
+</div>
 
 <style>
     body {
@@ -68,7 +78,7 @@ $success = $orderCounts[3] ?? 0;
         border-radius: 15px;
         color: white;
         text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: 0.3s;
     }
 
@@ -76,10 +86,22 @@ $success = $orderCounts[3] ?? 0;
         transform: translateY(-5px);
     }
 
-    .revenue { background: linear-gradient(135deg, #28a745, #218838); }
-    .pending { background: linear-gradient(135deg, #ffc107, #e0a800); color:#000; }
-    .processing { background: linear-gradient(135deg, #007bff, #0056b3); }
-    .success { background: linear-gradient(135deg, #17a2b8, #117a8b); }
+    .revenue {
+        background: linear-gradient(135deg, #28a745, #218838);
+    }
+
+    .pending {
+        background: linear-gradient(135deg, #ffc107, #e0a800);
+        color: #000;
+    }
+
+    .processing {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+    }
+
+    .success {
+        background: linear-gradient(135deg, #17a2b8, #117a8b);
+    }
 
     .card p {
         font-size: 28px;
@@ -92,7 +114,7 @@ $success = $orderCounts[3] ?? 0;
         background: #fff;
         padding: 25px;
         border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 </style>
 
@@ -126,7 +148,9 @@ $success = $orderCounts[3] ?? 0;
         options: {
             responsive: true,
             plugins: {
-                legend: { display: false },
+                legend: {
+                    display: false
+                },
                 tooltip: {
                     backgroundColor: '#333',
                     titleColor: '#fff',
