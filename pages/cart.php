@@ -1,7 +1,7 @@
 <?php
 include("../controllers/customer/auth_helper.php");
 checkLoginAccess(); // Kiểm tra quyền truy cập
-//session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="vi">

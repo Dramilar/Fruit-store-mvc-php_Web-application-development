@@ -16,12 +16,6 @@ $success = $orderCounts[3] ?? 0;
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link rel="stylesheet" href="../../bin/css/bootstrap.css">
-<link rel="stylesheet" href="../../bin/css/style.css">
-<link rel="stylesheet" href="../../bin/css/banner.css">
-
-<?php include("../../includes/header.php"); ?>
-<?php include("../../includes/banner_admin.php"); ?>
 
 <div class="statistics-container">
     <h1>📊 Báo cáo bán hàng</h1>
@@ -51,10 +45,6 @@ $success = $orderCounts[3] ?? 0;
     <div class="chart-box">
         <canvas id="orderChart"></canvas>
     </div>
-</div>
-<?php include("../../includes/footer.php"); ?>
-<div style="color: red; font-style: italic; font-weight: bold;">
-    <h2><a href="dashboard.php">Quay lại trang chủ</a></h2>
 </div>
 
 <style>
