@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Lịch sử mua hàng</title>
-    <link rel="stylesheet" href="/Fruit/bin/css/style.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/bootstrap.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/purchase_history.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/banner.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/purchase_history.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/banner.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <h1>Lịch sử mua hàng</h1>
 
         <?php if (empty($orders)): ?>
-            <div class="history-empty">Bạn chưa có đơn hàng nào. <a href="/Fruit/index.php">Mua ngay!</a></div>
+            <div class="history-empty">Bạn chưa có đơn hàng nào. <a href="<?= BASE_URL ?>/index.php">Mua ngay!</a></div>
         <?php else: ?>
             <?php foreach ($orders as $order): ?>
                 <div class="history-card">
@@ -35,7 +35,7 @@
                         <?php if (isset($orderItems[$order['id']])): ?>
                             <?php foreach ($orderItems[$order['id']] as $item): ?>
                                 <div class="history-item">
-                                    <img src="/Fruit/bin/images/<?= $item['image'] ?>" alt="<?= $item['name'] ?>">
+                                    <img src="<?= BASE_URL ?>/bin/images/<?= $item['image'] ?>" alt="<?= $item['name'] ?>">
                                     <div class="item-info">
                                         <div class="name"><?= $item['name'] ?></div>
                                         <div class="meta">SL: <?= $item['quantity'] ?> | Giá: <?= number_format($item['price'], 0, ',', '.') ?>₫</div>

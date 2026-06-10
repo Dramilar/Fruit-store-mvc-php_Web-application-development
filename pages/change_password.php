@@ -1,9 +1,10 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/config.php';
 
 // Kiểm tra đăng nhập
 if (!isset($_SESSION['username'])) {
-    header("Location: /Fruit/auth/login.php");
+    header("Location: " . BASE_URL . "/auth/login.php");
     exit();
 }
 ?>
@@ -15,8 +16,8 @@ if (!isset($_SESSION['username'])) {
     <title>Đổi mật khẩu</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/Fruit/bin/css/bootstrap.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/style.css">
 </head>
 <body>
 
@@ -26,7 +27,7 @@ if (!isset($_SESSION['username'])) {
         <h3 class="text-center mb-4">🔒 Đổi mật khẩu</h3>
 
         <!-- FORM -->
-        <form method="POST" action="/Fruit/controllers/UserController.php">
+        <form method="POST" action="<?= BASE_URL ?>/controllers/UserController.php">
             <input type="hidden" name="action" value="change_password">
 
             <div class="mb-3">
@@ -58,7 +59,7 @@ if (!isset($_SESSION['username'])) {
 
         <!-- BACK -->
         <div class="text-center mt-3">
-            <a href="/Fruit/index.php">⬅ Quay về trang chủ</a>
+            <a href="<?= BASE_URL ?>/index.php">⬅ Quay về trang chủ</a>
         </div>
 
     </div>

@@ -1,23 +1,23 @@
 <div id="menu">
     <div id="menu-left">
         <ul>
-            <li><a href="/Fruit/pages/admin/dashboard.php">🏠 Home</a></li>
-            <li><a href="/Fruit/pages/news.php">📰 News</a></li>
+            <li><a href="<?= BASE_URL ?>/pages/admin/dashboard.php">🏠 Home</a></li>
+            <li><a href="<?= BASE_URL ?>/pages/news.php">📰 News</a></li>
             <li>
-                <a href="/Fruit/pages/admin/manager_products.php">🍎 Products</a>
+                <a href="<?= BASE_URL ?>/pages/admin/manager_products.php">🍎 Products</a>
             </li>
-            <li><a href="/Fruit/pages/admin/manager_order.php">Quản lý đơn hàng</a></li>
+            <li><a href="<?= BASE_URL ?>/pages/admin/manager_order.php">Quản lý đơn hàng</a></li>
         </ul>
     </div>
     <div id="menu-right">
         <div class="dropdown">
             <button class="dropbtn" type="button">👤 Account</button>
             <div class="dropdown-content">
-                <a href="/Fruit/pages/news.php" id="cart-link">📰 News (<span id="cart-count">0</span>)</a>
-                <a href="/Fruit/pages/admin/manager_order.php"> Manage Orders</a>
-                <a href="/Fruit/pages/admin/statistic_order.php"> Statistics</a>
-                <a href="/Fruit/pages/change_password.php">🔒 Change Password</a>
-                <a href="/Fruit/pages/logout.php">🚪 Logout</a>
+                <a href="<?= BASE_URL ?>/pages/news.php" id="cart-link">📰 News (<span id="cart-count">0</span>)</a>
+                <a href="<?= BASE_URL ?>/pages/admin/manager_order.php"> Manage Orders</a>
+                <a href="<?= BASE_URL ?>/pages/admin/statistic_order.php"> Statistics</a>
+                <a href="<?= BASE_URL ?>/pages/change_password.php">🔒 Change Password</a>
+                <a href="<?= BASE_URL ?>/pages/logout.php">🚪 Logout</a>
             </div>
         </div>
     </div>
@@ -52,4 +52,4 @@
         // Các xử lý AJAX khác của bạn (Giỏ hàng, Tìm kiếm...) giữ nguyên bên dưới
     });
 </script>
-<script src="/Fruit/bin/js/jquery-3.7.1.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/jquery-3.7.1.js"></script>

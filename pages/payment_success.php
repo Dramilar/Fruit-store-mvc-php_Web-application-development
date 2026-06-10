@@ -26,10 +26,10 @@ if ($orderId > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Đặt hàng thành công</title>
-    <link rel="stylesheet" href="/Fruit/bin/css/style.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/bootstrap.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/banner.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/payment.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/banner.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/payment.css">
 </head>
 
 <body>
@@ -48,8 +48,8 @@ if ($orderId > 0) {
                 <p>Không tìm thấy thông tin tổng tiền cho đơn hàng số <strong><?php echo htmlspecialchars($orderId); ?></strong>.</p>
             <?php endif; ?>
             <div style="margin-top: 15px;">
-                <a href="/Fruit/index.php" class="btn btn-primary">Về trang chủ</a>
-                <a href="/Fruit/pages/purchase_history.php" class="btn btn-secondary">Lịch sử mua hàng</a>
+                <a href="<?= BASE_URL ?>/index.php" class="btn btn-primary">Về trang chủ</a>
+                <a href="<?= BASE_URL ?>/pages/purchase_history.php" class="btn btn-secondary">Lịch sử mua hàng</a>
             </div>
         </div>
     </div>

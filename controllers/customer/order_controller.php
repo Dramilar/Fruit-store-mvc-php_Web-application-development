@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($orderId) {
             unset($_SESSION['cart']);
-            header("Location: /Fruit/pages/payment_success.php?order_id=" . $orderId);
+            header("Location: " . BASE_URL . "/pages/payment_success.php?order_id=" . $orderId);
             exit;
         }
 

@@ -25,7 +25,7 @@ if ($result && $result->num_rows > 0) {
         echo "<div class='product-item'>
             <div class='product-img'>
                 <!-- FIX Ở ĐÂY -->
-                <img src='/Fruit/bin/images/" . htmlspecialchars($row['image']) . "' 
+                <img src='" . BASE_URL . "/bin/images/" . htmlspecialchars($row['image']) . "'
                      alt='" . htmlspecialchars($row['name']) . "'>
             </div>
 
@@ -33,7 +33,7 @@ if ($result && $result->num_rows > 0) {
 
             <p class='product-price'>" . number_format($row['price'], 0, ',', '.') . "₫</p>
 
-            <a href='/Fruit/pages/detail_products.php?id=" . $row['id'] . "' class='btn-detail'>
+            <a href='" . BASE_URL . "/pages/detail_products.php?id=" . $row['id'] . "' class='btn-detail'>
                 Xem chi tiết
             </a>
 

@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include($_SERVER['DOCUMENT_ROOT'] . "/Fruit/includes/connect.php");
-require_once($_SERVER['DOCUMENT_ROOT'] . "/Fruit/models/clsProduct.php");
+require_once __DIR__ . '/../../includes/connect.php';
+require_once __DIR__ . '/../../models/clsProduct.php';
 
 $product = new Product($conn);
 
@@ -60,11 +60,11 @@ if(isset($_GET['delete'])){
     if($check->num_rows > 0){
         echo "<script>
                 alert('❌ Không thể xóa sản phẩm vì đã tồn tại trong đơn hàng!');
-                window.location.href='/Fruit/pages/admin/manager_products.php';
+                window.location.href='<?= BASE_URL ?>/pages/admin/manager_products.php';
               </script>";
     } else {
         $product->delete($id);
-        header("Location: /Fruit/pages/admin/manager_products.php");
+        header("Location: " . BASE_URL . "/pages/admin/manager_products.php");
         exit();
     }
 }

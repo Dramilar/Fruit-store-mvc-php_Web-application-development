@@ -1,25 +1,25 @@
 <div id="menu">
     <div id="menu-left">
         <ul>
-            <li><a href="/Fruit/index.php">🏠 Home</a></li>
+            <li><a href="<?= BASE_URL ?>/index.php">🏠 Home</a></li>
             <li>
                 <form id="search-form">
                     <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm">
                     <button type="submit">🔍</button>
                 </form>
             </li>
-            <li><a href="/Fruit/news.php">📰 News</a></li>
-            <li><a href="/Fruit/pages/about.php">ℹ️ About Us</a></li>
+            <li><a href="<?= BASE_URL ?>/news.php">📰 News</a></li>
+            <li><a href="<?= BASE_URL ?>/pages/about.php">ℹ️ About Us</a></li>
         </ul>
     </div>
     <div id="menu-right">
         <div class="dropdown">
             <button class="dropbtn" type="button">👤 Account</button>
             <div class="dropdown-content">
-                <a href="/Fruit/pages/cart.php" id="cart-link">🛒 Shopping Cart (<span id="cart-count">0</span>)</a>
-                <a href="/Fruit/pages/purchase_history.php">📜 Purchase History</a>
-                <a href="/Fruit/pages/change_password.php">🔒 Change Password</a>
-                <a href="/Fruit/pages/logout.php">🚪 Logout</a>
+                <a href="<?= BASE_URL ?>/pages/cart.php" id="cart-link">🛒 Shopping Cart (<span id="cart-count">0</span>)</a>
+                <a href="<?= BASE_URL ?>/pages/purchase_history.php">📜 Purchase History</a>
+                <a href="<?= BASE_URL ?>/pages/change_password.php">🔒 Change Password</a>
+                <a href="<?= BASE_URL ?>/pages/logout.php">🚪 Logout</a>
             </div>
         </div>
     </div>
@@ -54,4 +54,4 @@
         // Các xử lý AJAX khác của bạn (Giỏ hàng, Tìm kiếm...) giữ nguyên bên dưới
     });
 </script>
-<script src="/Fruit/bin/js/jquery-3.7.1.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/jquery-3.7.1.js"></script>

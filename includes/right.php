@@ -24,7 +24,7 @@ if ($typeID > 0) {
                     <div class="card h-100 shadow-sm">
 
                         <!-- ẢNH -->
-                        <img src="/Fruit/bin/images/<?php echo htmlspecialchars($row['image']); ?>" 
+                        <img src="<?= BASE_URL ?>/bin/images/<?php echo htmlspecialchars($row['image']); ?>"
                              class="card-img-top"
                              style="height: 200px; object-fit: cover;">
 

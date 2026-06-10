@@ -1,14 +1,15 @@
-<?php session_start(); ?>
+<?php session_start();
+require_once __DIR__ . '/../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <title>Về Chúng Tôi</title>
-    <link rel="stylesheet" href="/Fruit/bin/css/style.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/bootstrap.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/about.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/banner.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/about.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/banner.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                 <h2>📖 Câu Chuyện Của Chúng Tôi</h2>
                 <div class="about-story">
                     <div class="story-image">
-                        <img src="/Fruit/bin/images/about.jpg" alt="Về chúng tôi" class="about-img">
+                        <img src="<?= BASE_URL ?>/bin/images/about.jpg" alt="Về chúng tôi" class="about-img">
                     </div>
                     <div class="story-text">
                         <p>
@@ -95,5 +96,5 @@
 </body>
 
 </html>
-<script src="/Fruit/bin/js/jquery-3.7.1.js"></script>
-<script src="/Fruit/bin/js/main.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/jquery-3.7.1.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/main.js"></script>

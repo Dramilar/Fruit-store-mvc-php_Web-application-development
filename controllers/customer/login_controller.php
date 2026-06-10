@@ -18,14 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Điều hướng dựa trên vai trò
         if ($user['role'] == 1) {
-            header("Location: /Fruit/pages/admin/dashboard.php"); // Trang quản trị cho nhân viên
+            header("Location: " . BASE_URL . "/pages/admin/dashboard.php"); // Trang quản trị cho nhân viên
         } else {
-            header("Location: /Fruit/index.php"); // Trang chủ cho khách hàng
+            header("Location: " . BASE_URL . "/index.php"); // Trang chủ cho khách hàng
         }
         exit;
     } else {
         $_SESSION['error'] = "Sai tài khoản hoặc mật khẩu!";
-        header("Location: /Fruit/auth/login.php");
+        header("Location: " . BASE_URL . "/auth/login.php");
         exit;
     }
 }

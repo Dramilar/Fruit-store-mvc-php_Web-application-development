@@ -69,7 +69,7 @@ $total = mysqli_num_rows($list);
                             </td>
 
                             <td>
-                                <img src="/Fruit/bin/images/<?= htmlspecialchars($row['image']) ?>"
+                                <img src="<?= BASE_URL ?>/bin/images/<?= htmlspecialchars($row['image']) ?>"
                                     class="product-img">
                             </td>
 

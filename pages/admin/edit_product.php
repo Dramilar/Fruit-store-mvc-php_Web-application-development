@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/Fruit/includes/connect.php");
-require_once($_SERVER['DOCUMENT_ROOT'] . "/Fruit/models/clsProduct.php");
+require_once __DIR__ . '/../../includes/connect.php';
+require_once __DIR__ . '/../../models/clsProduct.php';
 
 include("../../controllers/customer/auth_helper.php");
 checkLoginAccess(); // Kiểm tra quyền truy cập
@@ -39,7 +39,7 @@ $row = $product->getProductById($id);
             <!-- ẢNH -->
             <label class="fw-semibold">Ảnh hiện tại</label><br>
             <img id="preview"
-                src="/Fruit/bin/images/<?= htmlspecialchars($row['image']) ?>"
+                src="<?= BASE_URL ?>/bin/images/<?= htmlspecialchars($row['image']) ?>"
                 class="mb-3 product-img">
 
             <input type="file" name="image" class="form-control mb-3" onchange="previewImage(event)">

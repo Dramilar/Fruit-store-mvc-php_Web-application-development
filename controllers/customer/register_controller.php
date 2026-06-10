@@ -11,14 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($userModel->checkExists($username)) {
         $_SESSION['error'] = "Tài khoản đã tồn tại!";
-        header("Location: /Fruit/auth/register.php");
+        header("Location: " . BASE_URL . "/auth/register.php");
     } else {
         if ($userModel->register($username, $password)) {
             $_SESSION['success'] = "Đăng ký thành công! Đang chuyển hướng...";
-            header("refresh:2;url=/Fruit/auth/login.php");
+            header("refresh:2;url=" . BASE_URL . "/auth/login.php");
         } else {
             $_SESSION['error'] = "Có lỗi xảy ra, vui lòng thử lại.";
-            header("Location: /Fruit/auth/register.php");
+            header("Location: " . BASE_URL . "/auth/register.php");
         }
     }
     exit;

@@ -5,12 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Trang chủ</title>
-    <link rel="stylesheet" href="/Fruit/bin/css/style.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/bootstrap.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/filter_product.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/leftsyle.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/rightstyle.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/banner.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/filter_product.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/leftsyle.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/rightstyle.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/banner.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 </body>
 
 </html>
-<script src="Fruit/bin/js/jquery-3.7.1.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/jquery-3.7.1.js"></script>
 <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 10000;"></div>
-<script src="/Fruit/bin/js/main.js"></script>
-<script src="/Fruit/bin/js/cart.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/main.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/cart.js"></script>

@@ -10,10 +10,10 @@ checkLoginAccess(); // Kiểm tra quyền truy cập
 <head>
     <meta charset="UTF-8">
     <title>Thanh toán</title>
-    <link rel="stylesheet" href="/Fruit/bin/css/style.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/bootstrap.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/banner.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/payment.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/banner.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/payment.css">
 </head>
 
 <body>
@@ -51,7 +51,7 @@ checkLoginAccess(); // Kiểm tra quyền truy cập
                         <h3>Vui lòng thanh toán tại đây</h3>
                     </div>
                 <?php else: ?>
-                    <p>Giỏ hàng của bạn đang trống. <a href="/Fruit/index.php">Tiếp tục mua sắm</a></p>
+                    <p>Giỏ hàng của bạn đang trống. <a href="<?= BASE_URL ?>/index.php">Tiếp tục mua sắm</a></p>
                 <?php endif; ?>
             </div>
 
@@ -82,5 +82,5 @@ checkLoginAccess(); // Kiểm tra quyền truy cập
 </body>
 
 </html>
-<script src="/Fruit/bin/js/jquery-3.7.1.js"></script>
-<script src="/Fruit/bin/js/payment.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/jquery-3.7.1.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/payment.js"></script>

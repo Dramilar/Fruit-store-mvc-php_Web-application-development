@@ -18,12 +18,12 @@ if ($productId > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Chi tiết sản phẩm</title>
-    <link rel="stylesheet" href="/Fruit/bin/css/style.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/bootstrap.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/leftstyle.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/banner.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/filter_product.css">
-    <link rel="stylesheet" href="/Fruit/bin/css/detail_products.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/leftstyle.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/banner.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/filter_product.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/bin/css/detail_products.css">
 
 </head>
 
@@ -39,18 +39,18 @@ if ($productId > 0) {
                     <div class="detail-error">
                         <h2>Không tìm thấy sản phẩm</h2>
                         <p>Vui lòng chọn một sản phẩm hợp lệ.</p>
-                        <a class="detail-back" href="/Fruit/index.php">Quay lại trang chủ</a>
+                        <a class="detail-back" href="<?= BASE_URL ?>/index.php">Quay lại trang chủ</a>
                     </div>
                 <?php elseif (!$product) : ?>
                     <div class="detail-error">
                         <h2>Không tìm thấy sản phẩm</h2>
                         <p>Sản phẩm bạn tìm không tồn tại hoặc đã bị xóa.</p>
-                        <a class="detail-back" href="/Fruit/index.php">Quay lại trang chủ</a>
+                        <a class="detail-back" href="<?= BASE_URL ?>/index.php">Quay lại trang chủ</a>
                     </div>
                 <?php else : ?>
                     <div class="detail-card">
                         <div class="detail-image">
-                            <img src="/Fruit/bin/images/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                            <img src="<?= BASE_URL ?>/bin/images/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                         </div>
                         <div class="detail-info">
                             <h1><?php echo htmlspecialchars($product['name']); ?></h1>
@@ -85,10 +85,10 @@ if ($productId > 0) {
                                     $relatedShown++;
                             ?>
                                     <div class="related-card">
-                                        <img src="/Fruit/bin/images/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>">
+                                        <img src="<?= BASE_URL ?>/bin/images/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>">
                                         <h3><?php echo htmlspecialchars($row['name']); ?></h3>
                                         <p class="related-price"><?php echo number_format($row['price'], 0, ',', '.'); ?>₫/kg</p>
-                                        <a class="related-detail" href="/Fruit/pages/detail_products.php?id=<?php echo $row['id']; ?>">Xem chi tiết</a>
+                                        <a class="related-detail" href="<?= BASE_URL ?>/pages/detail_products.php?id=<?php echo $row['id']; ?>">Xem chi tiết</a>
                                     </div>
                             <?php
                                 }
@@ -110,6 +110,6 @@ if ($productId > 0) {
 </body>
 
 </html>
-<script src="/Fruit/bin/js/jquery-3.7.1.js"></script>
-<script src="/Fruit/bin/js/main.js"></script>
-<script src="/Fruit/bin/js/cart.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/jquery-3.7.1.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/main.js"></script>
+<script src="<?= BASE_URL ?>/bin/js/cart.js"></script>

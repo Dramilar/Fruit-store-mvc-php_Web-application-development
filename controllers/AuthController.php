@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once __DIR__ . '/../includes/config.php';
 
 class AuthController {
     public function logout() {
@@ -8,7 +9,7 @@ class AuthController {
         session_destroy();
 
         // Chuyển hướng về trang login
-        header("Location: /Fruit/auth/login.php");
+        header("Location: " . BASE_URL . "/auth/login.php");
         exit();
     }
 }

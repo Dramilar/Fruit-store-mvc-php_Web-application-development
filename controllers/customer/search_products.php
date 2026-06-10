@@ -21,7 +21,7 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div class='product-item'>
             <div class='product-img'>
-                <img src='/Fruit/bin/images/" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "'>
+                <img src='" . BASE_URL . "/bin/images/" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "'>
             </div>
             <h3 class='product-name'>" . htmlspecialchars($row['name']) . "</h3>
             <p class='product-description'>" . htmlspecialchars($row['description']) . "</p>
